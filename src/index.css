@@ -1,96 +1,116 @@
+@import url('@fontsource/dm-sans/400.css');
+@import url('@fontsource/dm-sans/500.css');
+@import url('@fontsource/dm-sans/600.css');
+@import url('@fontsource/dm-sans/700.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* AGRAGEO Design System - Based on Logo Colors */
+    --background: 210 20% 98%;
+    --foreground: 220 40% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 40% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 40% 13%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Navy Blue from logo */
+    --primary: 220 56% 20%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Teal/Cyan accent from logo */
+    --secondary: 174 62% 38%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Light blue-gray for muted elements */
+    --muted: 210 20% 94%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Green accent from logo leaf */
+    --accent: 142 55% 42%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 174 62% 38%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom AGRAGEO Colors */
+    --navy: 220 56% 20%;
+    --navy-dark: 220 60% 12%;
+    --teal: 174 62% 38%;
+    --teal-light: 174 55% 48%;
+    --green-nature: 142 55% 42%;
+    --green-light: 142 45% 52%;
+    
+    /* Gradients */
+    --gradient-navy: linear-gradient(135deg, hsl(220 56% 20%) 0%, hsl(220 60% 12%) 100%);
+    --gradient-teal: linear-gradient(135deg, hsl(174 62% 38%) 0%, hsl(174 55% 48%) 100%);
+    --gradient-nature: linear-gradient(135deg, hsl(174 62% 38%) 0%, hsl(142 55% 42%) 100%);
+    --gradient-hero-overlay: linear-gradient(135deg, hsla(220 56% 15% / 0.85) 0%, hsla(174 50% 25% / 0.75) 100%);
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px -4px hsla(220 56% 20% / 0.12);
+    --shadow-elevated: 0 8px 30px -8px hsla(220 56% 20% / 0.2);
+    --shadow-glow-teal: 0 0 30px hsla(174 62% 38% / 0.3);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 220 56% 20%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 174 62% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 50% 28%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 50% 28%;
+    --sidebar-ring: 174 62% 38%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 40% 8%;
+    --foreground: 210 20% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 40% 12%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 40% 12%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 174 62% 45%;
+    --primary-foreground: 220 40% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 50% 25%;
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 40% 18%;
+    --muted-foreground: 210 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 142 55% 50%;
+    --accent-foreground: 220 40% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 220 40% 20%;
+    --input: 220 40% 20%;
+    --ring: 174 62% 45%;
+
+    --sidebar-background: 220 40% 8%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 174 62% 45%;
+    --sidebar-primary-foreground: 220 40% 8%;
+    --sidebar-accent: 220 40% 18%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 220 40% 20%;
+    --sidebar-ring: 174 62% 45%;
   }
 }
 
@@ -99,7 +119,77 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .text-gradient-nature {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-nature);
+  }
+
+  .bg-gradient-hero-overlay {
+    background: var(--gradient-hero-overlay);
+  }
+
+  .bg-gradient-navy {
+    background: var(--gradient-navy);
+  }
+
+  .bg-gradient-teal {
+    background: var(--gradient-teal);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-glow-teal {
+    box-shadow: var(--shadow-glow-teal);
+  }
+
+  /* Topographic pattern overlay */
+  .bg-topo-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0c16.569 0 30 13.431 30 30 0 16.569-13.431 30-30 30C13.431 60 0 46.569 0 30 0 13.431 13.431 0 30 0zm0 10c-11.046 0-20 8.954-20 20s8.954 20 20 20 20-8.954 20-20-8.954-20-20-20zm0 10c5.523 0 10 4.477 10 10s-4.477 10-10 10-10-4.477-10-10 4.477-10 10-10z' fill='%231a365d' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+
+  /* Geometric grid pattern */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(hsla(174 62% 38% / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsla(174 62% 38% / 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .heading-display {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+
+  .heading-section {
+    @apply text-2xl md:text-3xl font-bold tracking-tight;
+  }
+
+  .text-body {
+    @apply text-base md:text-lg leading-relaxed;
   }
 }
