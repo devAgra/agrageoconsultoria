@@ -1,7 +1,5 @@
 const WhatsAppButton = () => {
-  const whatsappNumber = "5565981390282";
-  const message = encodeURIComponent("Olá! Gostaria de saber mais sobre os serviços da AGRAGEO.");
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+  const whatsappUrl = "https://wa.me/556581390282?text=Olá!%20Gostaria%20de%20orçamento%20para%20...";
 
   return (
     <a
