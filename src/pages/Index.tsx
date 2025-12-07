@@ -4,10 +4,10 @@ import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import CoverageMapSection from "@/components/CoverageMapSection";
 import PortfolioSection from "@/components/PortfolioSection";
+import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -18,6 +18,7 @@ const Index = () => {
         <ServicesSection />
         <CoverageMapSection />
         <PortfolioSection />
+        <FAQSection />
         <ContactSection />
       </main>
       <Footer />
