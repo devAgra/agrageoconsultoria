@@ -12,50 +12,54 @@ const CoverageMapSection = () => {
 
     // Initialize map centered on Brazil
     const map = L.map(mapRef.current, {
-      center: [-15.7801, -47.9292], // Brasília - center of Brazil
+      center: [-14.235, -51.9253], // Geographic center of Brazil
       zoom: 4,
-      scrollWheelZoom: false,
+      scrollWheelZoom: true,
       zoomControl: true,
+      dragging: true,
+      touchZoom: true,
+      doubleClickZoom: true,
     });
 
     mapInstanceRef.current = map;
 
-    // Add OpenStreetMap tiles (free, no API key needed)
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    // Technical CartoDB Positron tiles for cleaner look
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
       maxZoom: 19,
+      subdomains: 'abcd',
     }).addTo(map);
 
-    // Custom marker icon
+    // Custom HQ marker icon - more technical/angular
     const customIcon = L.divIcon({
       className: "custom-marker",
-      html: `<div class="w-8 h-8 bg-teal-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      html: `<div style="width: 36px; height: 36px; background: linear-gradient(135deg, hsl(173, 58%, 39%), hsl(173, 58%, 29%)); display: flex; align-items: center; justify-content: center; border: 2px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter">
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
           <circle cx="12" cy="10" r="3"/>
         </svg>
       </div>`,
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
+      iconSize: [36, 36],
+      iconAnchor: [18, 36],
     });
 
     // Headquarters marker - Várzea Grande, MT
     const hqMarker = L.marker([-15.6469, -56.1327], { icon: customIcon }).addTo(map);
     hqMarker.bindPopup(
-      `<div class="text-center p-2">
-        <strong class="text-teal-700">AGRAGEO - Sede</strong><br/>
-        <span class="text-sm text-gray-600">Várzea Grande, MT</span>
+      `<div style="text-align: center; padding: 8px; font-family: 'DM Sans', sans-serif;">
+        <strong style="color: hsl(173, 58%, 39%); font-size: 14px;">AGRAGEO - Sede</strong><br/>
+        <span style="font-size: 12px; color: #64748b;">Várzea Grande, MT</span>
       </div>`
     );
 
-    // Coverage circle representing national coverage
-    L.circle([-15.7801, -47.9292], {
+    // Coverage polygon for Brazil territory - more precise than circle
+    L.circle([-14.235, -51.9253], {
       color: "hsl(173, 58%, 39%)",
       fillColor: "hsl(173, 58%, 39%)",
-      fillOpacity: 0.1,
-      radius: 2500000, // 2500km radius - covers most of Brazil
+      fillOpacity: 0.08,
+      radius: 4000000, // 4000km radius - covers entire Brazil
       weight: 2,
-      dashArray: "10, 5",
+      dashArray: "8, 4",
     }).addTo(map);
 
     // Sample project markers in different regions
@@ -74,19 +78,20 @@ const CoverageMapSection = () => {
       { coords: [-20.4697, -54.6201] as [number, number], city: "Campo Grande, MS" },
     ];
 
+    // Technical square marker for project locations
     const smallIcon = L.divIcon({
       className: "small-marker",
-      html: `<div class="w-3 h-3 bg-navy-600 rounded-full border border-white shadow"></div>`,
-      iconSize: [12, 12],
-      iconAnchor: [6, 6],
+      html: `<div style="width: 10px; height: 10px; background: hsl(222, 47%, 31%); border: 1px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></div>`,
+      iconSize: [10, 10],
+      iconAnchor: [5, 5],
     });
 
     projectLocations.forEach((loc) => {
       const marker = L.marker(loc.coords, { icon: smallIcon }).addTo(map);
       marker.bindPopup(
-        `<div class="text-center p-1">
-          <span class="text-sm font-medium text-gray-700">Área de atuação</span><br/>
-          <span class="text-xs text-gray-500">${loc.city}</span>
+        `<div style="text-align: center; padding: 4px; font-family: 'DM Sans', sans-serif;">
+          <span style="font-size: 12px; font-weight: 600; color: hsl(222, 47%, 31%);">Área de atuação</span><br/>
+          <span style="font-size: 11px; color: #64748b;">${loc.city}</span>
         </div>`
       );
     });
@@ -129,17 +134,19 @@ const CoverageMapSection = () => {
           {/* Legend */}
           <div className="absolute bottom-4 left-4 bg-background/95 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-border/50 z-[1000]">
             <h4 className="font-semibold text-sm mb-3 text-foreground">Legenda</h4>
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 bg-teal-600 rounded-full border-2 border-white shadow"></div>
+          <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-5 flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(173, 58%, 39%), hsl(173, 58%, 29%))" }}>
+                  <MapPin className="w-3 h-3 text-white" />
+                </div>
                 <span className="text-xs text-muted-foreground">Sede - Várzea Grande/MT</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-navy-600 rounded-full border border-white shadow"></div>
+              <div className="flex items-center gap-3">
+                <div className="w-[10px] h-[10px]" style={{ background: "hsl(222, 47%, 31%)", border: "1px solid white" }}></div>
                 <span className="text-xs text-muted-foreground">Áreas de atuação</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-1 border border-dashed border-teal-600"></div>
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-[2px] border-t-2 border-dashed border-teal-600"></div>
                 <span className="text-xs text-muted-foreground">Cobertura nacional</span>
               </div>
             </div>
