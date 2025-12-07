@@ -1,43 +1,36 @@
 import { 
-  FileCheck, 
-  Map, 
   Layers, 
-  Droplets, 
-  Camera,
+  MapPin, 
+  Leaf, 
+  Mountain,
   ArrowRight
 } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: FileCheck,
-      title: "Licenciamento Ambiental e Geológico",
-      description: "Elaboração de RCA, RIMA, estudos de viabilidade e acompanhamento junto a órgãos como SEMA/MT.",
-      features: ["RCA e RIMA", "Estudos de Viabilidade", "Acompanhamento SEMA/MT"],
-    },
-    {
-      icon: Map,
-      title: "Levantamentos Topográficos e Cartográficos",
-      description: "Demarcação, cadastro rural, modelagem do terreno e regularização fundiária.",
-      features: ["Demarcação de Áreas", "Cadastro Rural", "Regularização Fundiária"],
-    },
-    {
       icon: Layers,
-      title: "Geoprocessamento e Análise Espacial",
-      description: "Mapas temáticos, zoneamento, monitoramento de uso do solo e cruzamento de camadas técnicas.",
-      features: ["Mapas Temáticos", "Zoneamento", "Monitoramento de Solo"],
+      title: "Geoprocessamento",
+      description: "Análise espacial avançada com QGIS e ArcGIS, elaboração de shapefiles e regularização CAR.",
+      features: ["QGIS / ArcGIS", "Shapefiles", "CAR - Cadastro Ambiental Rural"],
     },
     {
-      icon: Droplets,
-      title: "Assessoria em Projetos Minerais e Hídricos",
-      description: "Prospecção, perfuração de poços e estudos para extração sustentável.",
-      features: ["Prospecção Mineral", "Perfuração de Poços", "Extração Sustentável"],
+      icon: MapPin,
+      title: "Topografia",
+      description: "Levantamentos topográficos, demarcação de áreas e mapeamento aéreo com drones profissionais.",
+      features: ["Levantamentos de Campo", "Demarcação de Áreas", "Mapeamento com Drones"],
     },
     {
-      icon: Camera,
-      title: "Fotogrametria e Mapeamento Aéreo",
-      description: "Uso de drones como ferramenta integrada para apoio técnico em levantamentos.",
-      features: ["Drones Profissionais", "Apoio Técnico", "Mapeamento Preciso"],
+      icon: Leaf,
+      title: "Meio Ambiente",
+      description: "Elaboração de EIA/RIMA, licenças ambientais e estudos de impacto para regularização.",
+      features: ["EIA / RIMA", "Licenças Ambientais", "Estudos de Impacto"],
+    },
+    {
+      icon: Mountain,
+      title: "Geologia",
+      description: "Mapeamento geológico, prospecção mineral e estudos para extração sustentável.",
+      features: ["Mapeamento Geológico", "Prospecção Mineral", "Estudos de Extração"],
     },
   ];
 
@@ -54,13 +47,14 @@ const ServicesSection = () => {
           </h2>
           <p className="text-body text-muted-foreground max-w-2xl mx-auto">
             Oferecemos um portfólio completo de serviços técnicos para gestão territorial, 
-            licenciamento e estudos ambientais no Mato Grosso.
+            licenciamento e estudos ambientais. <strong className="text-foreground">Atuamos em todo o Brasil</strong>, 
+            com base operacional em Mato Grosso.
           </p>
           <div className="w-20 h-1 bg-secondary mx-auto mt-6" />
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <div
               key={service.title}
