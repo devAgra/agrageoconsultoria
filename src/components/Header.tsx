@@ -19,6 +19,7 @@ const Header = () => {
     { href: "#sobre", label: "Sobre" },
     { href: "#servicos", label: "Serviços" },
     { href: "#portfolio", label: "Portfólio" },
+    { href: "#faq", label: "FAQ" },
     { href: "#contato", label: "Contato" },
   ];
 
