@@ -35,7 +35,7 @@ const ContactSection = () => {
     {
       icon: MapPin,
       label: "Endereço",
-      value: "Rua Rio Negro, 0 – Jardim Ikaray, Várzea Grande/MT",
+      value: "Rua Rio Negro, 11 – Jardim Ikaray, Várzea Grande/MT",
     },
     {
       icon: Clock,
@@ -45,8 +45,8 @@ const ContactSection = () => {
     {
       icon: Phone,
       label: "Telefone",
-      value: "(65) 99999-9999",
-      href: "tel:+5565999999999",
+      value: "(65) 98139-0282",
+      href: "tel:+5565981390282",
     },
     {
       icon: Mail,
@@ -109,9 +109,6 @@ const ContactSection = () => {
               <div className="space-y-2 text-sm text-muted-foreground">
                 <p>
                   <span className="font-semibold text-foreground">CNPJ:</span> 47.570.284/0001-15
-                </p>
-                <p>
-                  <span className="font-semibold text-foreground">Inscrição Estadual:</span> 139559183
                 </p>
               </div>
             </div>
