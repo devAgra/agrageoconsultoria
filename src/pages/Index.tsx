@@ -8,6 +8,8 @@ import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ChatBot from "@/components/ChatBot";
+
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -23,6 +25,7 @@ const Index = () => {
       </main>
       <Footer />
       <WhatsAppButton />
+      <ChatBot />
     </div>
   );
 };
