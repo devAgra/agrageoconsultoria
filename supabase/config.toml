@@ -1,1 +1,4 @@
 project_id = "ephfxeglhbtsoawbkgzv"
+
+[functions.agrageo-chat]
+verify_jwt = false
