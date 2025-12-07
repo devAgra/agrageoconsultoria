@@ -44,7 +44,8 @@ const HeroSection = () => {
             style={{ animationDelay: "0.5s" }}
           >
             Geologia, topografia, geoprocessamento e estudos ambientais com precisão, 
-            tecnologia e conhecimento do bioma mato-grossense.
+            tecnologia e conhecimento do bioma mato-grossense. 
+            <strong className="text-primary-foreground">Atendemos em todo o território nacional.</strong>
           </p>
 
           {/* CTA Buttons */}
