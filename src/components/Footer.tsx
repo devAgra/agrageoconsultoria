@@ -30,7 +30,7 @@ const Footer = () => {
           {/* Contact Icons */}
           <div className="flex items-center justify-center md:justify-end gap-4">
             <a
-              href="https://wa.me/5565999999999"
+              href="https://wa.me/5565981390282"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 bg-primary-foreground/10 hover:bg-secondary/20 flex items-center justify-center transition-colors"

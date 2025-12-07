@@ -42,21 +42,23 @@ const AboutSection = () => {
           {/* Text Content */}
           <div className="space-y-6">
             <p className="text-body text-muted-foreground">
-              A <strong className="text-foreground">AGRAGEO Consultoria</strong> foi fundada em 21 de setembro de 2023 
-              por Alex da Silva Agra, profissional com formação em geologia, topografia e geoprocessamento.
+              A <strong className="text-foreground">AGRAGEO Consultoria</strong> nasceu da necessidade de oferecer 
+              soluções técnicas especializadas para o território mato-grossense, unindo conhecimento em geologia, 
+              topografia e geoprocessamento com tecnologia de ponta.
             </p>
             <p className="text-body text-muted-foreground">
-              Atuamos com rigor técnico em <strong className="text-foreground">licenciamentos ambientais</strong>, 
-              levantamentos de campo, mapeamento territorial e estudos geológicos, sempre alinhados às 
-              exigências legais e à realidade local do Mato Grosso.
+              Nossa atuação abrange <strong className="text-foreground">licenciamentos ambientais</strong>, 
+              levantamentos de campo, mapeamento territorial e estudos geológicos, sempre com rigor técnico 
+              e total conformidade com as exigências legais de órgãos reguladores.
             </p>
             <p className="text-body text-muted-foreground">
-              Com base operacional em <strong className="text-foreground">Várzea Grande (MT)</strong>, 
-              temos capacidade de atuação em áreas remotas, rurais e ambientalmente sensíveis do Cerrado e Pantanal.
+              Com base em <strong className="text-foreground">Várzea Grande (MT)</strong>, 
+              atendemos projetos em áreas urbanas, rurais, remotas e ambientalmente sensíveis dos biomas 
+              Cerrado e Pantanal, levando precisão e responsabilidade a cada trabalho.
             </p>
             <div className="pt-4">
               <p className="text-lg font-semibold text-primary border-l-4 border-secondary pl-4">
-                Não é só drone — é gestão territorial com base técnica, documental e legal.
+                Mais que tecnologia — gestão territorial com base técnica, documental e legal.
               </p>
             </div>
           </div>
