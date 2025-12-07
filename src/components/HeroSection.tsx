@@ -34,7 +34,7 @@ const HeroSection = () => {
             className="heading-display mb-6 opacity-0 animate-fade-in-up"
             style={{ animationDelay: "0.3s" }}
           >
-            Soluções Técnicas para o Território – 
+            Soluções Técnicas para o Território
             <span className="block mt-2 text-gradient-nature">do Campo ao Licenciamento</span>
           </h1>
 

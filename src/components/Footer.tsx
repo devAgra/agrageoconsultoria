@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react";
-import logoAgrageo from "@/assets/logo-agrageo.jpg";
+import logoAgrageo from "@/assets/logo-agrageo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
