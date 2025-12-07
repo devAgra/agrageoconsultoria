@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAgrageo from "@/assets/logo-agrageo.jpg";
+import logoAgrageo from "@/assets/logo-agrageo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
