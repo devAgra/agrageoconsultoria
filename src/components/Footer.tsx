@@ -7,37 +7,42 @@ const Footer = () => {
   return (
     <footer className="bg-navy-900 text-white">
       <div className="section-container py-16">
-        <div className="grid md:grid-cols-3 gap-12">
-          {/* Logo e Descrição */}
-          <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 items-start">
+          
+          {/* Coluna 1 - Logo Grande */}
+          <div className="flex items-center justify-center md:justify-start">
             <img
               src={logoAgrageo}
               alt="AGRAGEO Consultoria"
-              className="h-28 w-auto"
+              className="h-48 w-auto"
             />
+          </div>
+
+          {/* Coluna 2 - Descrição e Redes Sociais */}
+          <div className="space-y-6">
             <p className="text-white/70 text-sm leading-relaxed">
               Nascemos da necessidade de oferecer soluções técnicas completas para gestão territorial, 
               licenciamento ambiental e regularização fundiária em Mato Grosso e em todo o Brasil.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 flex-wrap">
               <a
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
                 aria-label="Instagram"
               >
-                <Instagram className="w-6 h-6" />
+                <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="https://wa.me/5565981390282"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
                 aria-label="WhatsApp"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -49,31 +54,31 @@ const Footer = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
                 aria-label="Facebook"
               >
-                <Facebook className="w-6 h-6" />
+                <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
                 aria-label="Twitter"
               >
-                <Twitter className="w-6 h-6" />
+                <Twitter className="w-5 h-5" />
               </a>
               <a
                 href="mailto:contato@agrageo.com.br"
-                className="w-12 h-12 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
                 aria-label="E-mail"
               >
-                <Mail className="w-6 h-6" />
+                <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>
 
-          {/* Endereço Principal */}
+          {/* Coluna 3 - Endereço */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">Várzea Grande</h3>
             <div className="space-y-3 text-white/70 text-sm">
@@ -99,7 +104,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Horário de Funcionamento */}
+          {/* Coluna 4 - Horário de Atendimento */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">Horário de Atendimento</h3>
             <div className="space-y-2 text-white/70 text-sm">
