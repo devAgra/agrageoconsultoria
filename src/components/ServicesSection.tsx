@@ -3,6 +3,7 @@ import {
   MapPin, 
   Leaf, 
   Mountain,
+  Droplets,
   ArrowRight
 } from "lucide-react";
 
@@ -32,6 +33,12 @@ const ServicesSection = () => {
       description: "Mapeamento geológico, prospecção mineral e estudos para extração sustentável.",
       features: ["Mapeamento Geológico", "Prospecção Mineral", "Estudos de Extração"],
     },
+    {
+      icon: Droplets,
+      title: "Poços Artesianos",
+      description: "Regularização completa de poços artesianos, testes de vazão e outorga de uso de água.",
+      features: ["Teste de Vazão e Recuperação", "Outorga de Água", "Cadastro de Uso Insignificante", "Medição de Nível Estático/Dinâmico"],
+    },
   ];
 
   return (
@@ -54,7 +61,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {services.map((service) => (
             <div
               key={service.title}
