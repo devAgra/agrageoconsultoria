@@ -26,15 +26,15 @@ const HeroSection = () => {
             style={{ animationDelay: "0.2s" }}
           >
             <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 bg-secondary rounded-full" />
+              <span className="w-2 h-2 bg-secondary" />
               <span className="text-sm font-medium">Geologia</span>
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 bg-secondary rounded-full" />
+              <span className="w-2 h-2 bg-secondary" />
               <span className="text-sm font-medium">Topografia</span>
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 bg-secondary rounded-full" />
+              <span className="w-2 h-2 bg-secondary" />
               <span className="text-sm font-medium">Meio Ambiente</span>
             </span>
           </div>
