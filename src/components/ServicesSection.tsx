@@ -29,8 +29,14 @@ const ServicesSection = () => {
     {
       icon: Layers,
       title: "Geoprocessamento",
-      description: "Análise espacial avançada com QGIS e ArcGIS, elaboração de shapefiles e regularização CAR.",
-      features: ["QGIS/ArcGIS", "Shapefiles", "CAR – Cadastro Ambiental Rural"],
+      description: "",
+      features: [
+        "Análise Espacial Avançada",
+        "Regularização Ambiental (CAR – Cadastro Ambiental Rural)",
+        "Georreferenciamento de Imóveis Rurais e Urbanos",
+        "Mapeamento Temático",
+        "Monitoramento Ambiental e Territorial"
+      ],
     },
   ];
 
