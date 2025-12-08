@@ -159,7 +159,7 @@ const ChatBot = () => {
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-24 right-6 z-50 w-14 h-14 rounded-full bg-navy-600 text-white shadow-lg hover:bg-navy-700 transition-all flex items-center justify-center ${
+        className={`fixed bottom-24 right-6 z-50 w-14 h-14 bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-all flex items-center justify-center ${
           isOpen ? "hidden" : ""
         }`}
         aria-label="Abrir chat"
@@ -169,16 +169,16 @@ const ChatBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-navy-800 border-2 border-teal-600 rounded-lg shadow-elevated flex flex-col overflow-hidden">
+        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-primary border-2 border-secondary shadow-elevated flex flex-col overflow-hidden">
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3 bg-navy-600 text-white">
+          <div className="flex items-center justify-between px-4 py-3 bg-primary text-primary-foreground">
             <div className="flex items-center gap-2">
               <Bot className="w-5 h-5" />
               <span className="font-medium">Assistente AGRAGEO</span>
             </div>
             <button
               onClick={handleClose}
-              className="p-1 hover:bg-white/10 rounded"
+              className="p-1 hover:bg-primary-foreground/10"
               aria-label="Fechar chat"
             >
               <X className="w-5 h-5" />
@@ -186,57 +186,57 @@ const ChatBot = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-navy-800">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-primary/95">
             {messages.map((msg, i) => (
               <div
                 key={i}
                 className={`flex gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 {msg.role === "assistant" && (
-                  <div className="w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0">
-                    <Bot className="w-4 h-4 text-white" />
+                  <div className="w-8 h-8 bg-secondary flex items-center justify-center flex-shrink-0">
+                    <Bot className="w-4 h-4 text-secondary-foreground" />
                   </div>
                 )}
                 <div className="flex flex-col max-w-[75%]">
                   {/* Nome do remetente */}
                   <span className={`text-xs font-semibold mb-1 ${
                     msg.role === "user" 
-                      ? "text-right text-teal-300" 
-                      : "text-left text-teal-400"
+                      ? "text-right text-secondary" 
+                      : "text-left text-secondary"
                   }`}>
                     {msg.role === "user" ? (userName || "Você") : "AGRAGEO"}
                   </span>
                   <div
-                    className={`rounded-lg px-4 py-3 text-sm ${
+                    className={`px-4 py-3 text-sm ${
                       msg.role === "user"
-                        ? "bg-teal-700 text-white"
-                        : "bg-navy-700 text-white border border-teal-600"
+                        ? "bg-secondary text-secondary-foreground"
+                        : "bg-primary-foreground/10 text-primary-foreground border border-secondary"
                     }`}
                   >
                     <p className="whitespace-pre-wrap leading-relaxed">{msg.content}</p>
                   </div>
                 </div>
                 {msg.role === "user" && (
-                  <div className="w-8 h-8 rounded-full bg-navy-600 flex items-center justify-center flex-shrink-0">
-                    <User className="w-4 h-4 text-white" />
+                  <div className="w-8 h-8 bg-primary-foreground/20 flex items-center justify-center flex-shrink-0">
+                    <User className="w-4 h-4 text-primary-foreground" />
                   </div>
                 )}
               </div>
             ))}
             {isLoading && messages[messages.length - 1]?.role === "user" && (
               <div className="flex gap-2 justify-start">
-                <div className="w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0">
-                  <Bot className="w-4 h-4 text-white" />
+                <div className="w-8 h-8 bg-secondary flex items-center justify-center flex-shrink-0">
+                  <Bot className="w-4 h-4 text-secondary-foreground" />
                 </div>
                 <div className="flex flex-col max-w-[75%]">
-                  <span className="text-xs font-semibold mb-1 text-left text-teal-400">
+                  <span className="text-xs font-semibold mb-1 text-left text-secondary">
                     AGRAGEO
                   </span>
-                  <div className="bg-navy-700 border border-teal-600 rounded-lg px-4 py-3">
+                  <div className="bg-primary-foreground/10 border border-secondary px-4 py-3">
                     <div className="flex gap-1">
-                      <span className="w-2 h-2 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                      <span className="w-2 h-2 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                      <span className="w-2 h-2 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                      <span className="w-2 h-2 bg-secondary animate-bounce" style={{ animationDelay: "0ms" }} />
+                      <span className="w-2 h-2 bg-secondary animate-bounce" style={{ animationDelay: "150ms" }} />
+                      <span className="w-2 h-2 bg-secondary animate-bounce" style={{ animationDelay: "300ms" }} />
                     </div>
                   </div>
                 </div>
@@ -246,7 +246,7 @@ const ChatBot = () => {
           </div>
 
           {/* Input */}
-          <div className="p-3 border-t-2 border-teal-600 bg-navy-900">
+          <div className="p-3 border-t-2 border-secondary bg-primary">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -254,14 +254,14 @@ const ChatBot = () => {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder={awaitingName ? "Digite seu nome..." : "Digite sua mensagem..."}
-                className="flex-1 px-4 py-2.5 text-sm bg-white dark:bg-navy-700 text-navy-900 dark:text-white border-2 border-navy-300 dark:border-navy-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 placeholder:text-navy-400 dark:placeholder:text-navy-400"
+                className="flex-1 px-4 py-2.5 text-sm bg-background text-foreground border-2 border-border focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary placeholder:text-muted-foreground"
                 disabled={isLoading}
               />
               <Button
                 onClick={handleSend}
                 disabled={!input.trim() || isLoading}
                 size="icon"
-                className="bg-teal-600 hover:bg-teal-700 h-10 w-10"
+                className="bg-secondary hover:bg-secondary/90 h-10 w-10"
               >
                 <Send className="w-4 h-4" />
               </Button>
