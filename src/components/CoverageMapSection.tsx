@@ -124,10 +124,10 @@ const CoverageMapSection = () => {
         </div>
 
         {/* Map Container */}
-        <div className="relative overflow-hidden shadow-elevated border border-border/50">
+        <div className="relative overflow-hidden shadow-elevated border border-border/50 z-0">
           <div
             ref={mapRef}
-            className="w-full h-[250px] md:h-[300px]"
+            className="w-full h-[250px] md:h-[300px] relative z-0"
             style={{ background: "hsl(var(--muted))" }}
           />
           
