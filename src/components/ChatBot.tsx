@@ -131,7 +131,7 @@ const ChatBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-card border border-border rounded-lg shadow-elevated flex flex-col overflow-hidden">
+        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-card border-2 border-teal-600 rounded-lg shadow-elevated flex flex-col overflow-hidden">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 bg-navy-600 text-white">
             <div className="flex items-center gap-2">
@@ -200,7 +200,7 @@ const ChatBot = () => {
           </div>
 
           {/* Input */}
-          <div className="p-3 border-t border-border">
+          <div className="p-3 border-t-2 border-teal-600 bg-card">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -208,7 +208,7 @@ const ChatBot = () => {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Digite sua mensagem..."
-                className="flex-1 px-3 py-2 text-sm bg-background text-foreground border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                className="flex-1 px-3 py-2 text-sm bg-background text-foreground border-2 border-navy-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder:text-muted-foreground"
                 disabled={isLoading}
               />
               <Button
