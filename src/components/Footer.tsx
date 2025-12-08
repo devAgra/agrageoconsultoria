@@ -53,7 +53,7 @@ const Footer = () => {
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://linkedin.com/company/agrageoconsultoria"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
@@ -78,7 +78,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://t.me/+5565981390282"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
