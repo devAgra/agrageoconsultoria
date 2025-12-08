@@ -22,11 +22,21 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
           <div 
-            className="inline-flex items-center gap-2 px-4 py-2 bg-secondary-foreground/10 backdrop-blur-sm border border-secondary-foreground/20 mb-8 opacity-0 animate-fade-in"
+            className="inline-flex items-center gap-3 px-4 py-2 bg-secondary-foreground/10 backdrop-blur-sm border border-secondary-foreground/20 mb-8 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
-            <span className="w-2 h-2 bg-secondary rounded-full" />
-            <span className="text-sm font-medium">Geologia • Topografia • Meio Ambiente</span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 bg-secondary rounded-full" />
+              <span className="text-sm font-medium">Geologia</span>
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 bg-secondary rounded-full" />
+              <span className="text-sm font-medium">Topografia</span>
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 bg-secondary rounded-full" />
+              <span className="text-sm font-medium">Meio Ambiente</span>
+            </span>
           </div>
 
           {/* Headline */}
