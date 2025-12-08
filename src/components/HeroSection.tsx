@@ -40,12 +40,17 @@ const HeroSection = () => {
 
           {/* Subtitle */}
           <p 
-            className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up"
+            className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-4 leading-relaxed opacity-0 animate-fade-in-up"
             style={{ animationDelay: "0.5s" }}
           >
             Geologia, topografia, geoprocessamento e estudos ambientais com precisão, 
-            tecnologia e conhecimento do bioma mato-grossense. 
-            <strong className="text-primary-foreground"> Atendemos em todo o território nacional.</strong>
+            tecnologia e conhecimento do bioma mato-grossense.
+          </p>
+          <p 
+            className="text-lg md:text-xl font-bold text-primary-foreground max-w-3xl mx-auto mb-10 opacity-0 animate-fade-in-up"
+            style={{ animationDelay: "0.6s" }}
+          >
+            Atendemos em todo o território nacional.
           </p>
 
           {/* CTA Buttons */}
