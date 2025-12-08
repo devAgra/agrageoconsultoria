@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ThemeToggle";
 import logoAgrageo from "@/assets/logo-agrageo.png";
 
 const Header = () => {
@@ -62,6 +63,7 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
+            <ThemeToggle isScrolled={isScrolled} />
             <Button
               variant={isScrolled ? "teal" : "hero"}
               size="sm"
@@ -99,8 +101,9 @@ const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <div className="px-4 pt-2">
-                <Button variant="teal" className="w-full" asChild>
+              <div className="px-4 pt-2 flex items-center justify-between gap-4">
+                <ThemeToggle isScrolled={true} />
+                <Button variant="teal" className="flex-1" asChild>
                   <a href="#contato">Fale Conosco</a>
                 </Button>
               </div>
