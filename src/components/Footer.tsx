@@ -7,19 +7,19 @@ const Footer = () => {
   return (
     <footer className="bg-navy-900 text-white">
       <div className="section-container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 items-start">
           
           {/* Coluna 1 - Logo Grande */}
-          <div className="flex items-center justify-center md:justify-start h-full">
+          <div className="flex items-center justify-center sm:justify-start h-full sm:col-span-2 lg:col-span-1">
             <img
               src={logoAgrageo}
               alt="AGRAGEO Consultoria"
-              className="h-64 w-auto brightness-0 invert"
+              className="h-40 sm:h-48 lg:h-64 w-auto brightness-0 invert"
             />
           </div>
 
           {/* Coluna 2 - Descrição e Redes Sociais */}
-          <div className="space-y-6">
+          <div className="space-y-6 sm:col-span-2 lg:col-span-1">
             <p className="text-white/80 text-sm leading-relaxed text-justify">
               Nascemos da necessidade de oferecer <strong>soluções técnicas completas</strong> para gestão territorial, 
               licenciamento ambiental e regularização fundiária em <strong>Mato Grosso</strong> e em <strong>todo o Brasil</strong>.
