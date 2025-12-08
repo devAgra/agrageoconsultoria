@@ -37,6 +37,10 @@ const HeroSection = () => {
               <span className="w-2 h-2 bg-secondary" />
               <span className="text-sm font-medium">Meio Ambiente</span>
             </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-2 h-2 bg-secondary" />
+              <span className="text-sm font-medium">Geoprocessamento</span>
+            </span>
           </div>
 
           {/* Headline */}
