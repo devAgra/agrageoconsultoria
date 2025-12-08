@@ -11,19 +11,19 @@ const ServicesSection = () => {
     {
       icon: Mountain,
       title: "Geologia",
-      description: "Mapeamento geológico, prospecção mineral e estudos para extração sustentável.",
+      description: "",
       features: ["Mapeamento Geológico", "Prospecção Mineral", "Estudos de Extração", "Regularização de Poços", "Laudos de Estabilidade de Taludes"],
     },
     {
       icon: MapPin,
       title: "Topografia",
-      description: "Levantamentos topográficos, demarcação de áreas e mapeamento aéreo com drones profissionais.",
+      description: "",
       features: ["Levantamentos de Campo", "Demarcação de Áreas", "Mapeamento com Drones"],
     },
     {
       icon: Leaf,
       title: "Meio Ambiente",
-      description: "Elaboração de EIA/RIMA, licenças ambientais e estudos de impacto para regularização.",
+      description: "",
       features: ["EIA/RIMA", "Licenças Ambientais", "Estudos de Impacto"],
     },
     {
@@ -75,12 +75,9 @@ const ServicesSection = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-lg font-bold text-foreground mb-3">
+              <h3 className="text-lg font-bold text-foreground mb-4">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                {service.description}
-              </p>
 
               {/* Features */}
               <ul className="space-y-2 mb-6">
