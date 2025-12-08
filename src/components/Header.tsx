@@ -38,7 +38,7 @@ const Header = () => {
             <img
               src={logoAgrageo}
               alt="AGRAGEO Consultoria"
-              className="h-12 w-auto mix-blend-multiply dark:mix-blend-normal dark:brightness-0 dark:invert"
+              className="h-16 w-auto mix-blend-multiply dark:mix-blend-normal dark:brightness-0 dark:invert"
               style={{ background: 'transparent' }}
             />
           </a>
