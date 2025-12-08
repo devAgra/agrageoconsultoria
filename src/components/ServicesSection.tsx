@@ -3,17 +3,16 @@ import {
   MapPin, 
   Leaf, 
   Mountain,
-  Droplets,
   ArrowRight
 } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: Layers,
-      title: "Geoprocessamento",
-      description: "Análise espacial avançada com QGIS e ArcGIS, elaboração de shapefiles e regularização CAR.",
-      features: ["QGIS/ArcGIS", "Shapefiles", "CAR – Cadastro Ambiental Rural"],
+      icon: Mountain,
+      title: "Geologia",
+      description: "Mapeamento geológico, prospecção mineral e estudos para extração sustentável.",
+      features: ["Mapeamento Geológico", "Prospecção Mineral", "Estudos de Extração", "Regularização de Poços", "Laudos de Estabilidade de Taludes"],
     },
     {
       icon: MapPin,
@@ -28,16 +27,10 @@ const ServicesSection = () => {
       features: ["EIA/RIMA", "Licenças Ambientais", "Estudos de Impacto"],
     },
     {
-      icon: Mountain,
-      title: "Geologia",
-      description: "Mapeamento geológico, prospecção mineral e estudos para extração sustentável.",
-      features: ["Mapeamento Geológico", "Prospecção Mineral", "Estudos de Extração"],
-    },
-    {
-      icon: Droplets,
-      title: "Poços Artesianos",
-      description: "Regularização completa de poços artesianos, testes de vazão e outorga de uso de água.",
-      features: ["Teste de Vazão e Recuperação", "Outorga de Água", "Cadastro de Uso Insignificante", "Medição de Nível Estático/Dinâmico"],
+      icon: Layers,
+      title: "Geoprocessamento",
+      description: "Análise espacial avançada com QGIS e ArcGIS, elaboração de shapefiles e regularização CAR.",
+      features: ["QGIS/ArcGIS", "Shapefiles", "CAR – Cadastro Ambiental Rural"],
     },
   ];
 
@@ -61,7 +54,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service) => (
             <div
               key={service.title}

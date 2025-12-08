@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Clock, Phone, Mail, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -31,30 +31,6 @@ const ContactSection = () => {
     setIsSubmitting(false);
   };
 
-  const contactInfo = [
-    {
-      icon: MapPin,
-      label: "Endereço",
-      value: "Rua Rio Negro, 11 – Jardim Ikaray, Várzea Grande/MT",
-    },
-    {
-      icon: Clock,
-      label: "Horário",
-      value: "Segunda a sexta (08h–18h) | Sábado (08h–12h)",
-    },
-    {
-      icon: Phone,
-      label: "Telefone",
-      value: "(65) 98139-0282",
-      href: "tel:+5565981390282",
-    },
-    {
-      icon: Mail,
-      label: "E-mail",
-      value: "contato@agrageo.com.br",
-      href: "mailto:contato@agrageo.com.br",
-    },
-  ];
 
   return (
     <section id="contato" className="section-padding bg-muted">
@@ -74,48 +50,9 @@ const ContactSection = () => {
           <div className="w-20 h-1 bg-secondary mx-auto mt-6" />
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12">
-          {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-6">
-            <h3 className="text-lg font-bold text-foreground mb-6">
-              Informações de Contato
-            </h3>
-
-            {contactInfo.map((item) => (
-              <div key={item.label} className="flex gap-4">
-                <div className="w-12 h-12 bg-secondary/10 flex items-center justify-center shrink-0">
-                  <item.icon className="w-5 h-5 text-secondary" />
-                </div>
-                <div>
-                  <span className="text-xs font-semibold text-secondary uppercase tracking-wider">
-                    {item.label}
-                  </span>
-                  {item.href ? (
-                    <a
-                      href={item.href}
-                      className="block text-foreground hover:text-secondary transition-colors mt-1"
-                    >
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="text-foreground mt-1">{item.value}</p>
-                  )}
-                </div>
-              </div>
-            ))}
-
-            {/* Legal Info */}
-            <div className="pt-6 mt-6 border-t border-border">
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <p>
-                  <span className="font-semibold text-foreground">CNPJ:</span> 47.570.284/0001-15
-                </p>
-              </div>
-            </div>
-          </div>
-
+        <div className="max-w-2xl mx-auto">
           {/* Contact Form */}
-          <div className="lg:col-span-3">
+          <div>
             <form onSubmit={handleSubmit} className="bg-card p-8 shadow-card border border-border">
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
                 <div>

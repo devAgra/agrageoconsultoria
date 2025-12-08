@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Instagram, Facebook, Twitter } from "lucide-react";
 import logoAgrageo from "@/assets/logo-agrageo.png";
 
 const Footer = () => {
@@ -13,22 +13,31 @@ const Footer = () => {
             <img
               src={logoAgrageo}
               alt="AGRAGEO Consultoria"
-              className="h-20 w-auto"
+              className="h-28 w-auto"
             />
             <p className="text-white/70 text-sm leading-relaxed">
               Nascemos da necessidade de oferecer soluções técnicas completas para gestão territorial, 
               licenciamento ambiental e regularização fundiária em Mato Grosso e em todo o Brasil.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
               <a
                 href="https://wa.me/5565981390282"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors"
+                className="w-12 h-12 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
                 aria-label="WhatsApp"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-6 h-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
@@ -37,11 +46,29 @@ const Footer = () => {
                 </svg>
               </a>
               <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-6 h-6" />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-6 h-6" />
+              </a>
+              <a
                 href="mailto:contato@agrageo.com.br"
-                className="w-10 h-10 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors"
+                className="w-12 h-12 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
                 aria-label="E-mail"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-6 h-6" />
               </a>
             </div>
           </div>
