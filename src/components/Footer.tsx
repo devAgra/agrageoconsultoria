@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-navy-900 text-white">
-      <div className="section-container py-16">
+      <div className="section-container py-10 sm:py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 items-start">
           
           {/* Coluna 1 - Logo Grande */}
@@ -14,22 +14,22 @@ const Footer = () => {
             <img
               src={logoAgrageo}
               alt="AGRAGEO Consultoria"
-              className="h-40 sm:h-48 lg:h-64 w-auto brightness-0 invert"
+              className="h-32 sm:h-40 md:h-48 lg:h-64 w-auto brightness-0 invert"
             />
           </div>
 
           {/* Coluna 2 - Descrição e Redes Sociais */}
           <div className="space-y-6 sm:col-span-2 lg:col-span-1">
-            <p className="text-white/80 text-sm leading-relaxed text-justify">
+            <p className="text-white/80 text-sm leading-relaxed text-justify text-center sm:text-left">
               Nascemos da necessidade de oferecer <strong>soluções técnicas completas</strong> para gestão territorial, 
               licenciamento ambiental e regularização fundiária em <strong>Mato Grosso</strong> e em <strong>todo o Brasil</strong>.
             </p>
-            <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-center sm:justify-start">
               <a
                 href="https://instagram.com/agrageoconsultoria"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
+                className="w-10 h-10 sm:w-11 sm:h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
@@ -38,7 +38,7 @@ const Footer = () => {
                 href="https://facebook.com/agrageoconsultoria"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
+                className="w-10 h-10 sm:w-11 sm:h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
@@ -47,7 +47,7 @@ const Footer = () => {
                 href="https://x.com/_Agrageo_"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
+                className="w-10 h-10 sm:w-11 sm:h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="Twitter/X"
               >
                 <Twitter className="w-5 h-5" />
@@ -56,7 +56,7 @@ const Footer = () => {
                 href="https://linkedin.com/company/agrageoconsultoria"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
+                className="w-10 h-10 sm:w-11 sm:h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
@@ -65,7 +65,7 @@ const Footer = () => {
                 href="https://wa.me/5565981390282"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
+                className="w-10 h-10 sm:w-11 sm:h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="WhatsApp"
               >
                 <svg
@@ -81,14 +81,14 @@ const Footer = () => {
                 href="https://t.me/+5565981390282"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
+                className="w-10 h-10 sm:w-11 sm:h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="Telegram"
               >
                 <Send className="w-5 h-5" />
               </a>
               <a
                 href="mailto:contato@agrageo.com.br"
-                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
+                className="w-10 h-10 sm:w-11 sm:h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="E-mail"
               >
                 <Mail className="w-5 h-5" />
@@ -97,7 +97,7 @@ const Footer = () => {
           </div>
 
           {/* Coluna 3 - Endereço */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-center sm:text-left">
             <h3 className="text-lg font-semibold text-white">Várzea Grande</h3>
             <div className="space-y-3 text-white/70 text-sm">
               <p className="flex items-start gap-2">
@@ -123,7 +123,7 @@ const Footer = () => {
           </div>
 
           {/* Coluna 4 - Horário de Atendimento */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-center sm:text-left">
             <h3 className="text-lg font-semibold text-white">Horário de Atendimento</h3>
             <div className="space-y-2 text-white/70 text-sm">
               <p>Segunda a Sexta: 08h às 18h</p>
@@ -137,8 +137,12 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
-          <p className="text-sm text-white/50">
-            AGRAGEO Consultoria • CNPJ: 47.570.284/0001-15 • © {currentYear} Todos os direitos reservados.
+          <p className="text-xs sm:text-sm text-white/50">
+            <span className="block sm:inline">AGRAGEO Consultoria</span>
+            <span className="hidden sm:inline"> • </span>
+            <span className="block sm:inline">CNPJ: 47.570.284/0001-15</span>
+            <span className="hidden sm:inline"> • </span>
+            <span className="block sm:inline">© {currentYear} Todos os direitos reservados.</span>
           </p>
         </div>
       </div>
