@@ -131,7 +131,7 @@ const ChatBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-background border border-border rounded-lg shadow-elevated flex flex-col overflow-hidden">
+        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-card border border-border rounded-lg shadow-elevated flex flex-col overflow-hidden">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 bg-navy-600 text-white">
             <div className="flex items-center gap-2">
@@ -170,7 +170,7 @@ const ChatBot = () => {
                   className={`max-w-[80%] rounded-lg px-3 py-2 text-sm ${
                     msg.role === "user"
                       ? "bg-navy-600 text-white"
-                      : "bg-muted text-foreground"
+                      : "bg-navy-100 dark:bg-navy-800 text-navy-900 dark:text-navy-100"
                   }`}
                 >
                   <p className="whitespace-pre-wrap">{msg.content}</p>
@@ -187,7 +187,7 @@ const ChatBot = () => {
                 <div className="w-7 h-7 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0">
                   <Bot className="w-4 h-4 text-white" />
                 </div>
-                <div className="bg-muted rounded-lg px-3 py-2">
+                <div className="bg-navy-100 dark:bg-navy-800 rounded-lg px-3 py-2">
                   <div className="flex gap-1">
                     <span className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
                     <span className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
@@ -208,7 +208,7 @@ const ChatBot = () => {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Digite sua mensagem..."
-                className="flex-1 px-3 py-2 text-sm bg-muted border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                className="flex-1 px-3 py-2 text-sm bg-background text-foreground border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                 disabled={isLoading}
               />
               <Button
