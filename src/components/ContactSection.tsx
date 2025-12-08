@@ -40,7 +40,7 @@ const ContactSection = () => {
     {
       icon: Clock,
       label: "Horário",
-      value: "Seg–Sex (08h–18h), Sáb (08h–12h)",
+      value: "Segunda a sexta (08h–18h) | Sábado (08h–12h)",
     },
     {
       icon: Phone,

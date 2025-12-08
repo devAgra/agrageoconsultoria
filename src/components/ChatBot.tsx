@@ -10,6 +10,8 @@ const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [awaitingName, setAwaitingName] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
@@ -21,6 +23,18 @@ const ChatBot = () => {
     scrollToBottom();
   }, [messages]);
 
+  // Mensagem inicial quando abre o chat
+  useEffect(() => {
+    if (isOpen && messages.length === 0) {
+      setMessages([
+        {
+          role: "assistant",
+          content: "Olá! Sou o assistente virtual da AGRAGEO. Para melhor atendê-lo, como posso chamá-lo?",
+        },
+      ]);
+    }
+  }, [isOpen, messages.length]);
+
   const streamChat = async (userMessages: Message[]) => {
     const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/agrageo-chat`;
 
@@ -30,7 +44,7 @@ const ChatBot = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
       },
-      body: JSON.stringify({ messages: userMessages }),
+      body: JSON.stringify({ messages: userMessages, userName }),
     });
 
     if (!resp.ok) {
@@ -89,11 +103,27 @@ const ChatBot = () => {
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
-    const userMsg: Message = { role: "user", content: input.trim() };
+    const userInput = input.trim();
+    const userMsg: Message = { role: "user", content: userInput };
     const newMessages = [...messages, userMsg];
     setMessages(newMessages);
     setInput("");
     setIsLoading(true);
+
+    // Se ainda estamos esperando o nome do usuário
+    if (awaitingName) {
+      setUserName(userInput);
+      setAwaitingName(false);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: `Prazer em conhecê-lo, ${userInput}! Sou o assistente virtual da AGRAGEO, especializada em geologia, topografia, geoprocessamento e estudos ambientais. Como posso ajudá-lo hoje?`,
+        },
+      ]);
+      setIsLoading(false);
+      return;
+    }
 
     try {
       await streamChat(newMessages);
@@ -116,6 +146,14 @@ const ChatBot = () => {
     }
   };
 
+  const handleClose = () => {
+    setIsOpen(false);
+    // Reset ao fechar
+    setMessages([]);
+    setUserName("");
+    setAwaitingName(true);
+  };
+
   return (
     <>
       {/* Chat Button */}
@@ -131,7 +169,7 @@ const ChatBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-card border-2 border-teal-600 rounded-lg shadow-elevated flex flex-col overflow-hidden">
+        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-navy-50 dark:bg-navy-900 border-2 border-teal-600 rounded-lg shadow-elevated flex flex-col overflow-hidden">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 bg-navy-600 text-white">
             <div className="flex items-center gap-2">
@@ -139,7 +177,7 @@ const ChatBot = () => {
               <span className="font-medium">Assistente AGRAGEO</span>
             </div>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={handleClose}
               className="p-1 hover:bg-white/10 rounded"
               aria-label="Fechar chat"
             >
@@ -148,35 +186,38 @@ const ChatBot = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            {messages.length === 0 && (
-              <div className="text-center text-muted-foreground text-sm py-8">
-                <Bot className="w-12 h-12 mx-auto mb-3 text-teal-600" />
-                <p className="font-medium text-foreground mb-1">Olá! Sou o assistente da AGRAGEO.</p>
-                <p>Como posso ajudá-lo com seu projeto?</p>
-              </div>
-            )}
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-navy-50 dark:bg-navy-900">
             {messages.map((msg, i) => (
               <div
                 key={i}
                 className={`flex gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 {msg.role === "assistant" && (
-                  <div className="w-7 h-7 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0">
                     <Bot className="w-4 h-4 text-white" />
                   </div>
                 )}
-                <div
-                  className={`max-w-[80%] rounded-lg px-3 py-2 text-sm ${
-                    msg.role === "user"
-                      ? "bg-navy-600 text-white"
-                      : "bg-navy-100 dark:bg-navy-800 text-navy-900 dark:text-navy-100"
-                  }`}
-                >
-                  <p className="whitespace-pre-wrap">{msg.content}</p>
+                <div className="flex flex-col max-w-[75%]">
+                  {/* Nome do remetente */}
+                  <span className={`text-xs font-semibold mb-1 ${
+                    msg.role === "user" 
+                      ? "text-right text-navy-600 dark:text-navy-300" 
+                      : "text-left text-teal-700 dark:text-teal-400"
+                  }`}>
+                    {msg.role === "user" ? (userName || "Você") : "AGRAGEO"}
+                  </span>
+                  <div
+                    className={`rounded-lg px-4 py-3 text-sm ${
+                      msg.role === "user"
+                        ? "bg-navy-600 text-white"
+                        : "bg-teal-100 dark:bg-teal-900 text-navy-900 dark:text-white border border-teal-300 dark:border-teal-700"
+                    }`}
+                  >
+                    <p className="whitespace-pre-wrap leading-relaxed">{msg.content}</p>
+                  </div>
                 </div>
                 {msg.role === "user" && (
-                  <div className="w-7 h-7 rounded-full bg-navy-600 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-navy-600 flex items-center justify-center flex-shrink-0">
                     <User className="w-4 h-4 text-white" />
                   </div>
                 )}
@@ -184,14 +225,19 @@ const ChatBot = () => {
             ))}
             {isLoading && messages[messages.length - 1]?.role === "user" && (
               <div className="flex gap-2 justify-start">
-                <div className="w-7 h-7 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-teal-600 flex items-center justify-center flex-shrink-0">
                   <Bot className="w-4 h-4 text-white" />
                 </div>
-                <div className="bg-navy-100 dark:bg-navy-800 rounded-lg px-3 py-2">
-                  <div className="flex gap-1">
-                    <span className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                    <span className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                    <span className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                <div className="flex flex-col max-w-[75%]">
+                  <span className="text-xs font-semibold mb-1 text-left text-teal-700 dark:text-teal-400">
+                    AGRAGEO
+                  </span>
+                  <div className="bg-teal-100 dark:bg-teal-900 border border-teal-300 dark:border-teal-700 rounded-lg px-4 py-3">
+                    <div className="flex gap-1">
+                      <span className="w-2 h-2 bg-teal-600 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                      <span className="w-2 h-2 bg-teal-600 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                      <span className="w-2 h-2 bg-teal-600 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -200,22 +246,22 @@ const ChatBot = () => {
           </div>
 
           {/* Input */}
-          <div className="p-3 border-t-2 border-teal-600 bg-card">
+          <div className="p-3 border-t-2 border-teal-600 bg-navy-100 dark:bg-navy-800">
             <div className="flex gap-2">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Digite sua mensagem..."
-                className="flex-1 px-3 py-2 text-sm bg-background text-foreground border-2 border-navy-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder:text-muted-foreground"
+                placeholder={awaitingName ? "Digite seu nome..." : "Digite sua mensagem..."}
+                className="flex-1 px-4 py-2.5 text-sm bg-white dark:bg-navy-700 text-navy-900 dark:text-white border-2 border-navy-300 dark:border-navy-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 placeholder:text-navy-400 dark:placeholder:text-navy-400"
                 disabled={isLoading}
               />
               <Button
                 onClick={handleSend}
                 disabled={!input.trim() || isLoading}
                 size="icon"
-                className="bg-teal-600 hover:bg-teal-700"
+                className="bg-teal-600 hover:bg-teal-700 h-10 w-10"
               >
                 <Send className="w-4 h-4" />
               </Button>

@@ -28,7 +28,7 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-card/95 backdrop-blur-md shadow-card"
-          : "bg-transparent"
+          : "bg-navy-900/80 backdrop-blur-sm"
       }`}
     >
       <div className="section-container">
@@ -56,7 +56,7 @@ const Header = () => {
                 className={`text-sm font-medium transition-colors duration-200 ${
                   isScrolled
                     ? "text-foreground hover:text-secondary"
-                    : "text-primary-foreground/90 hover:text-primary-foreground"
+                    : "text-white/90 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -75,12 +75,12 @@ const Header = () => {
           <button
             className="md:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label="Alternar menu"
           >
             {isMobileMenuOpen ? (
-              <X className={isScrolled ? "text-foreground" : "text-primary-foreground"} size={24} />
+              <X className={isScrolled ? "text-foreground" : "text-white"} size={24} />
             ) : (
-              <Menu className={isScrolled ? "text-foreground" : "text-primary-foreground"} size={24} />
+              <Menu className={isScrolled ? "text-foreground" : "text-white"} size={24} />
             )}
           </button>
         </div>

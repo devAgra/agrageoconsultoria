@@ -5,22 +5,22 @@ const AboutSection = () => {
     {
       icon: Award,
       title: "Experiência Técnica",
-      description: "Formação em geologia, topografia e geoprocessamento",
+      description: "Formação em geologia, topografia e geoprocessamento.",
     },
     {
       icon: Target,
       title: "Precisão",
-      description: "Rigor técnico em todos os levantamentos e estudos",
+      description: "Rigor técnico em todos os levantamentos e estudos.",
     },
     {
       icon: Shield,
       title: "Conformidade Legal",
-      description: "Alinhamento com exigências de órgãos como SEMA/MT",
+      description: "Alinhamento com exigências de órgãos como SEMA/MT.",
     },
     {
       icon: MapPin,
-      title: "Atuação Regional",
-      description: "Conhecimento profundo do bioma mato-grossense",
+      title: "Atuação Nacional",
+      description: "Conhecimento profundo dos biomas brasileiros.",
     },
   ];
 
@@ -43,7 +43,7 @@ const AboutSection = () => {
           <div className="space-y-6">
             <p className="text-body text-muted-foreground">
               A <strong className="text-foreground">AGRAGEO Consultoria</strong> nasceu da necessidade de oferecer 
-              soluções técnicas especializadas para o território mato-grossense, unindo conhecimento em geologia, 
+              soluções técnicas especializadas para o território brasileiro, unindo conhecimento em geologia, 
               topografia e geoprocessamento com tecnologia de ponta.
             </p>
             <p className="text-body text-muted-foreground">
@@ -52,13 +52,13 @@ const AboutSection = () => {
               e total conformidade com as exigências legais de órgãos reguladores.
             </p>
             <p className="text-body text-muted-foreground">
-              Com base em <strong className="text-foreground">Várzea Grande (MT)</strong>, 
+              Com sede em <strong className="text-foreground">Várzea Grande (MT)</strong>, 
               atendemos projetos em áreas urbanas, rurais, remotas e ambientalmente sensíveis dos biomas 
-              Cerrado e Pantanal, levando precisão e responsabilidade a cada trabalho.
+              Cerrado e Pantanal, levando precisão e responsabilidade a cada trabalho realizado em todo o Brasil.
             </p>
             <div className="pt-4">
               <p className="text-lg font-semibold text-primary border-l-4 border-secondary pl-4">
-                Mais que tecnologia — gestão territorial com base técnica, documental e legal.
+                Mais que tecnologia: gestão territorial com base técnica, documental e legal.
               </p>
             </div>
           </div>

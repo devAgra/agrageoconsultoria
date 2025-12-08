@@ -7,24 +7,24 @@ const projects = [
     category: "ESTUDOS AMBIENTAIS",
     title: "Licenciamento para Sistema de Irrigação",
     location: "Sorriso – MT",
-    challenge: "Área com nascentes e APP demandando estudo detalhado",
-    solution: "Elaboração de RCA com mapeamento completo das áreas de preservação",
+    challenge: "Área com nascentes e APP demandando estudo detalhado.",
+    solution: "Elaboração de RCA com mapeamento completo das Áreas de Preservação Permanente.",
   },
   {
     id: 2,
     category: "MAPEAMENTO TOPOGRÁFICO",
     title: "Regularização Fundiária Rural",
     location: "Tangará da Serra – MT",
-    challenge: "Propriedade com limites indefinidos e sobreposição cadastral",
-    solution: "Levantamento geodésico e retificação junto ao INCRA",
+    challenge: "Propriedade com limites indefinidos e sobreposição cadastral.",
+    solution: "Levantamento geodésico e retificação junto ao INCRA.",
   },
   {
     id: 3,
     category: "GESTÃO TERRITORIAL",
     title: "Zoneamento Agrícola Municipal",
     location: "Nova Mutum – MT",
-    challenge: "Necessidade de ordenamento do uso do solo para expansão urbana",
-    solution: "Mapeamento multitemporal e proposta de zoneamento",
+    challenge: "Necessidade de ordenamento do uso do solo para expansão urbana.",
+    solution: "Mapeamento multitemporal e proposta de zoneamento.",
   },
 ];
 
@@ -41,7 +41,7 @@ const PortfolioSection = () => {
             Projetos Realizados
           </h2>
           <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-            Conheça alguns dos projetos que desenvolvemos no território mato-grossense.
+            Conheça alguns dos projetos que desenvolvemos no território brasileiro.
           </p>
           <div className="w-20 h-1 bg-secondary mx-auto mt-6" />
         </div>
@@ -99,7 +99,7 @@ const PortfolioSection = () => {
 
         {/* Note about more projects */}
         <p className="text-center text-muted-foreground mt-12 text-sm">
-          Entre em contato para conhecer mais projetos e cases de sucesso.
+          Entre em contato para conhecer mais projetos e casos de sucesso.
         </p>
       </div>
     </section>
