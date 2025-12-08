@@ -18,11 +18,11 @@ const ThemeToggle = ({ isScrolled = true }: ThemeToggleProps) => {
       variant="ghost"
       size="icon"
       onClick={toggleTheme}
-      className={`w-9 h-9 ${
+      className={
         isScrolled
           ? "text-foreground hover:bg-muted"
           : "text-white hover:bg-white/10"
-      }`}
+      }
       aria-label="Alternar tema"
     >
       <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
