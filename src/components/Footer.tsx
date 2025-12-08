@@ -10,11 +10,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 items-start">
           
           {/* Coluna 1 - Logo Grande */}
-          <div className="flex items-center justify-center md:justify-start">
+          <div className="flex items-center justify-center md:justify-start h-full">
             <img
               src={logoAgrageo}
               alt="AGRAGEO Consultoria"
-              className="h-48 w-auto"
+              className="h-64 w-auto"
             />
           </div>
 
