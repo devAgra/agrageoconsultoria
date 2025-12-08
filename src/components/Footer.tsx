@@ -23,7 +23,7 @@ const Footer = () => {
               AGRAGEO Consultoria
             </p>
             <p className="text-secondary font-semibold mt-1">
-              Técnica, território e responsabilidade.
+              Técnica, Território e Responsabilidade.
             </p>
           </div>
 

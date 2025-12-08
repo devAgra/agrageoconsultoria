@@ -12,7 +12,7 @@ const ServicesSection = () => {
       icon: Layers,
       title: "Geoprocessamento",
       description: "Análise espacial avançada com QGIS e ArcGIS, elaboração de shapefiles e regularização CAR.",
-      features: ["QGIS / ArcGIS", "Shapefiles", "CAR - Cadastro Ambiental Rural"],
+      features: ["QGIS/ArcGIS", "Shapefiles", "CAR – Cadastro Ambiental Rural"],
     },
     {
       icon: MapPin,
@@ -24,7 +24,7 @@ const ServicesSection = () => {
       icon: Leaf,
       title: "Meio Ambiente",
       description: "Elaboração de EIA/RIMA, licenças ambientais e estudos de impacto para regularização.",
-      features: ["EIA / RIMA", "Licenças Ambientais", "Estudos de Impacto"],
+      features: ["EIA/RIMA", "Licenças Ambientais", "Estudos de Impacto"],
     },
     {
       icon: Mountain,
@@ -55,7 +55,7 @@ const ServicesSection = () => {
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <div
               key={service.title}
               className="group relative bg-card p-8 shadow-card hover:shadow-elevated transition-all duration-300 border border-border hover:border-secondary/30 overflow-hidden"

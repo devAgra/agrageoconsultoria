@@ -47,7 +47,7 @@ const CoverageMapSection = () => {
     const hqMarker = L.marker([-15.6469, -56.1327], { icon: customIcon }).addTo(map);
     hqMarker.bindPopup(
       `<div style="text-align: center; padding: 8px; font-family: 'DM Sans', sans-serif;">
-        <strong style="color: hsl(173, 58%, 39%); font-size: 14px;">AGRAGEO - Sede</strong><br/>
+        <strong style="color: hsl(173, 58%, 39%); font-size: 14px;">AGRAGEO – Sede</strong><br/>
         <span style="font-size: 12px; color: #64748b;">Várzea Grande, MT</span>
       </div>`
     );
@@ -90,7 +90,7 @@ const CoverageMapSection = () => {
       const marker = L.marker(loc.coords, { icon: smallIcon }).addTo(map);
       marker.bindPopup(
         `<div style="text-align: center; padding: 4px; font-family: 'DM Sans', sans-serif;">
-          <span style="font-size: 12px; font-weight: 600; color: hsl(222, 47%, 31%);">Área de atuação</span><br/>
+          <span style="font-size: 12px; font-weight: 600; color: hsl(222, 47%, 31%);">Área de Atuação</span><br/>
           <span style="font-size: 11px; color: #64748b;">${loc.city}</span>
         </div>`
       );
@@ -139,7 +139,7 @@ const CoverageMapSection = () => {
                 <div className="w-5 h-5 flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(173, 58%, 39%), hsl(173, 58%, 29%))" }}>
                   <MapPin className="w-3 h-3 text-white" />
                 </div>
-                <span className="text-xs text-muted-foreground">Sede - Várzea Grande/MT</span>
+                <span className="text-xs text-muted-foreground">Sede – Várzea Grande/MT</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-[10px] h-[10px]" style={{ background: "hsl(222, 47%, 31%)", border: "1px solid white" }}></div>

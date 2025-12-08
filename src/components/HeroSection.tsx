@@ -45,7 +45,7 @@ const HeroSection = () => {
           >
             Geologia, topografia, geoprocessamento e estudos ambientais com precisão, 
             tecnologia e conhecimento do bioma mato-grossense. 
-            <strong className="text-primary-foreground">Atendemos em todo o território nacional.</strong>
+            <strong className="text-primary-foreground"> Atendemos em todo o território nacional.</strong>
           </p>
 
           {/* CTA Buttons */}
@@ -71,7 +71,7 @@ const HeroSection = () => {
             href="#sobre" 
             className="flex flex-col items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground transition-colors"
           >
-            <span className="text-xs tracking-widest uppercase">Saiba mais</span>
+            <span className="text-xs tracking-widest uppercase">Saiba Mais</span>
             <ChevronDown className="w-5 h-5 animate-bounce" />
           </a>
         </div>
