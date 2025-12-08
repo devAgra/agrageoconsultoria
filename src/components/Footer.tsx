@@ -14,15 +14,15 @@ const Footer = () => {
             <img
               src={logoAgrageo}
               alt="AGRAGEO Consultoria"
-              className="h-64 w-auto"
+              className="h-64 w-auto brightness-0 invert"
             />
           </div>
 
           {/* Coluna 2 - Descrição e Redes Sociais */}
           <div className="space-y-6">
-            <p className="text-white/70 text-sm leading-relaxed">
-              Nascemos da necessidade de oferecer soluções técnicas completas para gestão territorial, 
-              licenciamento ambiental e regularização fundiária em Mato Grosso e em todo o Brasil.
+            <p className="text-white/80 text-sm leading-relaxed text-justify">
+              Nascemos da necessidade de oferecer <strong>soluções técnicas completas</strong> para gestão territorial, 
+              licenciamento ambiental e regularização fundiária em <strong>Mato Grosso</strong> e em <strong>todo o Brasil</strong>.
             </p>
             <div className="flex items-center gap-3 flex-wrap">
               <a
