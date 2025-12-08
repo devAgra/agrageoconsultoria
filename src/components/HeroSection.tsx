@@ -22,7 +22,7 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
           <div 
-            className="inline-flex items-center gap-3 px-4 py-2 bg-secondary-foreground/10 backdrop-blur-sm border border-secondary-foreground/20 mb-8 opacity-0 animate-fade-in"
+            className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-3 py-2 sm:px-4 bg-secondary-foreground/10 backdrop-blur-sm border border-secondary-foreground/20 mb-8 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
             <span className="flex items-center gap-1.5">
