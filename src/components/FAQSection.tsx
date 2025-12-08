@@ -54,10 +54,10 @@ const FAQSection = () => {
     <section id="faq" className="section-padding bg-muted/30">
       <div className="section-container">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-sm mb-6">
-            <HelpCircle className="w-4 h-4 text-teal-600" />
-            <span className="text-sm font-medium text-teal-700">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 border border-secondary/20 mb-6">
+            <HelpCircle className="w-4 h-4 text-secondary" />
+            <span className="text-sm font-medium text-secondary">
               Dúvidas Frequentes
             </span>
           </div>
@@ -79,7 +79,7 @@ const FAQSection = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-background border border-border/50 rounded-lg px-6 data-[state=open]:shadow-md transition-shadow"
+                className="bg-background border border-border/50 px-6 data-[state=open]:shadow-md transition-shadow"
               >
                 <AccordionTrigger className="text-left hover:no-underline py-5">
                   <span className="font-medium text-foreground pr-4">
@@ -101,7 +101,7 @@ const FAQSection = () => {
           </p>
           <a
             href="#contato"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 text-white font-medium rounded-sm hover:bg-teal-700 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-secondary-foreground font-medium hover:bg-secondary/90 transition-colors"
           >
             Fale com nossa equipe
           </a>

@@ -108,10 +108,10 @@ const CoverageMapSection = () => {
     <section id="cobertura" className="section-padding bg-muted/30">
       <div className="section-container">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/10 border border-teal-500/20 rounded-sm mb-6">
-            <MapPin className="w-4 h-4 text-teal-600" />
-            <span className="text-sm font-medium text-teal-700">Cobertura Nacional</span>
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 border border-secondary/20 mb-6">
+            <MapPin className="w-4 h-4 text-secondary" />
+            <span className="text-sm font-medium text-secondary">Cobertura Nacional</span>
           </div>
           <h2 className="heading-section mb-4">
             Atuação em Todo o{" "}
@@ -124,7 +124,7 @@ const CoverageMapSection = () => {
         </div>
 
         {/* Map Container */}
-        <div className="relative rounded-lg overflow-hidden shadow-elevated border border-border/50">
+        <div className="relative overflow-hidden shadow-elevated border border-border/50">
           <div
             ref={mapRef}
             className="w-full h-[250px] md:h-[300px]"
@@ -132,7 +132,7 @@ const CoverageMapSection = () => {
           />
           
           {/* Legend */}
-          <div className="absolute bottom-4 left-4 bg-background/95 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-border/50 z-[1000]">
+          <div className="absolute bottom-4 left-4 bg-background/95 backdrop-blur-sm p-4 shadow-lg border border-border/50 z-[1000]">
             <h4 className="font-semibold text-sm mb-3 text-foreground">Legenda</h4>
           <div className="space-y-3">
               <div className="flex items-center gap-3">
@@ -155,20 +155,20 @@ const CoverageMapSection = () => {
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
-          <div className="text-center p-6 bg-background rounded-lg border border-border/50">
-            <div className="text-3xl font-bold text-teal-600 mb-1">27</div>
+          <div className="text-center p-6 bg-background border border-border/50">
+            <div className="text-3xl font-bold text-secondary mb-1">27</div>
             <div className="text-sm text-muted-foreground">Estados atendidos</div>
           </div>
-          <div className="text-center p-6 bg-background rounded-lg border border-border/50">
-            <div className="text-3xl font-bold text-teal-600 mb-1">5</div>
+          <div className="text-center p-6 bg-background border border-border/50">
+            <div className="text-3xl font-bold text-secondary mb-1">5</div>
             <div className="text-sm text-muted-foreground">Regiões do Brasil</div>
           </div>
-          <div className="text-center p-6 bg-background rounded-lg border border-border/50">
-            <div className="text-3xl font-bold text-teal-600 mb-1">MT</div>
+          <div className="text-center p-6 bg-background border border-border/50">
+            <div className="text-3xl font-bold text-secondary mb-1">MT</div>
             <div className="text-sm text-muted-foreground">Sede em Mato Grosso</div>
           </div>
-          <div className="text-center p-6 bg-background rounded-lg border border-border/50">
-            <div className="text-3xl font-bold text-teal-600 mb-1">100%</div>
+          <div className="text-center p-6 bg-background border border-border/50">
+            <div className="text-3xl font-bold text-secondary mb-1">100%</div>
             <div className="text-sm text-muted-foreground">Território nacional</div>
           </div>
         </div>
