@@ -169,7 +169,7 @@ const ChatBot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-navy-50 dark:bg-navy-900 border-2 border-teal-600 rounded-lg shadow-elevated flex flex-col overflow-hidden">
+        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-navy-800 border-2 border-teal-600 rounded-lg shadow-elevated flex flex-col overflow-hidden">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 bg-navy-600 text-white">
             <div className="flex items-center gap-2">
@@ -186,7 +186,7 @@ const ChatBot = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-navy-50 dark:bg-navy-900">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-navy-800">
             {messages.map((msg, i) => (
               <div
                 key={i}
@@ -201,16 +201,16 @@ const ChatBot = () => {
                   {/* Nome do remetente */}
                   <span className={`text-xs font-semibold mb-1 ${
                     msg.role === "user" 
-                      ? "text-right text-navy-600 dark:text-navy-300" 
-                      : "text-left text-teal-700 dark:text-teal-400"
+                      ? "text-right text-teal-300" 
+                      : "text-left text-teal-400"
                   }`}>
                     {msg.role === "user" ? (userName || "Você") : "AGRAGEO"}
                   </span>
                   <div
                     className={`rounded-lg px-4 py-3 text-sm ${
                       msg.role === "user"
-                        ? "bg-navy-600 text-white"
-                        : "bg-teal-100 dark:bg-teal-900 text-navy-900 dark:text-white border border-teal-300 dark:border-teal-700"
+                        ? "bg-teal-700 text-white"
+                        : "bg-navy-700 text-white border border-teal-600"
                     }`}
                   >
                     <p className="whitespace-pre-wrap leading-relaxed">{msg.content}</p>
@@ -229,14 +229,14 @@ const ChatBot = () => {
                   <Bot className="w-4 h-4 text-white" />
                 </div>
                 <div className="flex flex-col max-w-[75%]">
-                  <span className="text-xs font-semibold mb-1 text-left text-teal-700 dark:text-teal-400">
+                  <span className="text-xs font-semibold mb-1 text-left text-teal-400">
                     AGRAGEO
                   </span>
-                  <div className="bg-teal-100 dark:bg-teal-900 border border-teal-300 dark:border-teal-700 rounded-lg px-4 py-3">
+                  <div className="bg-navy-700 border border-teal-600 rounded-lg px-4 py-3">
                     <div className="flex gap-1">
-                      <span className="w-2 h-2 bg-teal-600 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                      <span className="w-2 h-2 bg-teal-600 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                      <span className="w-2 h-2 bg-teal-600 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                      <span className="w-2 h-2 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                      <span className="w-2 h-2 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                      <span className="w-2 h-2 bg-teal-500 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
                     </div>
                   </div>
                 </div>
@@ -246,7 +246,7 @@ const ChatBot = () => {
           </div>
 
           {/* Input */}
-          <div className="p-3 border-t-2 border-teal-600 bg-navy-100 dark:bg-navy-800">
+          <div className="p-3 border-t-2 border-teal-600 bg-navy-900">
             <div className="flex gap-2">
               <input
                 type="text"
