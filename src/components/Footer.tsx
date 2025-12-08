@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Instagram, Facebook, Twitter } from "lucide-react";
+import { Mail, MapPin, Phone, Instagram, Facebook, Twitter, Linkedin, Send } from "lucide-react";
 import logoAgrageo from "@/assets/logo-agrageo.png";
 
 const Footer = () => {
@@ -26,13 +26,40 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-3 flex-wrap">
               <a
-                href="#"
+                href="https://instagram.com/agrageoconsultoria"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://facebook.com/agrageoconsultoria"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="https://x.com/_Agrageo_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                aria-label="Twitter/X"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href="https://wa.me/5565981390282"
@@ -55,18 +82,9 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
-                aria-label="Facebook"
+                aria-label="Telegram"
               >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
+                <Send className="w-5 h-5" />
               </a>
               <a
                 href="mailto:contato@agrageo.com.br"
