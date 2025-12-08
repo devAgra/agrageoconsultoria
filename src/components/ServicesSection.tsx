@@ -60,27 +60,27 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
           {services.map((service) => (
             <div
               key={service.title}
-              className="group relative bg-card p-8 shadow-card hover:shadow-elevated transition-all duration-300 border border-border hover:border-secondary/30 overflow-hidden"
+              className="group relative bg-card p-5 sm:p-6 lg:p-8 shadow-card hover:shadow-elevated transition-all duration-300 border border-border hover:border-secondary/30 overflow-hidden"
             >
               {/* Decorative corner */}
               <div className="absolute top-0 right-0 w-16 h-16 bg-secondary/5 -translate-y-1/2 translate-x-1/2 rotate-45 group-hover:bg-secondary/10 transition-colors" />
               
               {/* Icon */}
-              <div className="relative w-14 h-14 bg-gradient-teal flex items-center justify-center mb-6">
-                <service.icon className="w-7 h-7 text-secondary-foreground" />
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-teal flex items-center justify-center mb-4 sm:mb-6">
+                <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-secondary-foreground" />
               </div>
 
               {/* Content */}
-              <h3 className="text-lg font-bold text-foreground mb-4">
+              <h3 className="text-base sm:text-lg font-bold text-foreground mb-3 sm:mb-4">
                 {service.title}
               </h3>
 
               {/* Features */}
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <span className="w-2 h-2 bg-secondary" />
