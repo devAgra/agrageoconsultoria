@@ -29,7 +29,7 @@ const Footer = () => {
                 href="https://instagram.com/agrageoconsultoria"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
@@ -38,7 +38,7 @@ const Footer = () => {
                 href="https://facebook.com/agrageoconsultoria"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
@@ -47,7 +47,7 @@ const Footer = () => {
                 href="https://x.com/_Agrageo_"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="Twitter/X"
               >
                 <Twitter className="w-5 h-5" />
@@ -56,7 +56,7 @@ const Footer = () => {
                 href="https://linkedin.com/company/agrageoconsultoria"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
@@ -65,7 +65,7 @@ const Footer = () => {
                 href="https://wa.me/5565981390282"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="WhatsApp"
               >
                 <svg
@@ -81,14 +81,14 @@ const Footer = () => {
                 href="https://t.me/+5565981390282"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="Telegram"
               >
                 <Send className="w-5 h-5" />
               </a>
               <a
                 href="mailto:contato@agrageo.com.br"
-                className="w-11 h-11 bg-white/10 hover:bg-teal-600 flex items-center justify-center transition-colors rounded-md"
+                className="w-11 h-11 bg-white/10 hover:bg-secondary flex items-center justify-center transition-colors"
                 aria-label="E-mail"
               >
                 <Mail className="w-5 h-5" />
